@@ -33,15 +33,10 @@ package lab3;
 
 import javax.swing.*;
 import java.util.Random;
-import java.util.Scanner;
 
-public class RockPaperScissors {
+public class RockPaperScissorsOld {
     public final static int MAX_NUM = 3;
     public final static int MIN_NUM = 1;
-    public final static int ROCK =1;
-    public final static int PAPER =2;
-    public final static int SCISSOR = 3;
-
     public static void main(String[] args){
         int computerScore = 0;
         int userScore = 0;
@@ -49,7 +44,7 @@ public class RockPaperScissors {
         for(int counter = 0; counter<5; counter++){
             int computerSelectionNum = computerSelection();
             String computerSelectionString = "";
-            if(computerSelectionNum == ROCK){
+            if(computerSelectionNum == 1){
                 computerSelectionString = "Rock";
             } else if(computerSelectionNum ==2){
                 computerSelectionString = "Paper";
@@ -57,48 +52,39 @@ public class RockPaperScissors {
                 computerSelectionString = "Scissors";
             }
 
-            String response = JOptionPane.showInputDialog("Enter 1 (for Rock), 2 (for Paper), or 3 (for Scissors)");
-            Scanner responseParser = new Scanner( response );
-
-            if(responseParser.hasNextInt()){
-                int usrSelectionNum = responseParser.nextInt();
-                if((usrSelectionNum!=ROCK)&&(usrSelectionNum!=PAPER)&&(usrSelectionNum!=SCISSOR)){
-                    JOptionPane.showMessageDialog(null,"You have entered an impossible value, therfore you lose");
-                    computerScore++;
-                } else if(usrSelectionNum == computerSelectionNum){
-                    JOptionPane.showMessageDialog(null, "The round was a draw as I selected " +
-                            computerSelectionString +" as well.");
-                } else if((usrSelectionNum == ROCK)&&(computerSelectionNum== SCISSOR)){
-                    JOptionPane.showMessageDialog(null, "You win this round as I selected "+
-                            computerSelectionString);
-                    userScore++;
-                } else if((usrSelectionNum==PAPER)&&(computerSelectionNum==ROCK)){
-                    JOptionPane.showMessageDialog(null, "You win this round as I selected "+
-                            computerSelectionString);
-                    userScore++;
-                } else if((usrSelectionNum==SCISSOR)&&(computerSelectionNum==PAPER)){
-                    JOptionPane.showMessageDialog(null, "You win this round as I selected " +
-                            computerSelectionString);
-                    userScore++;
-                } else if((computerSelectionNum==ROCK)&&(usrSelectionNum==SCISSOR)){
-                    JOptionPane.showMessageDialog(null, "I win this round as I selected " +
-                            computerSelectionString);
-                    computerScore++;
-                } else if((computerSelectionNum==PAPER)&&(usrSelectionNum==ROCK)){
-                    JOptionPane.showMessageDialog(null, "I win this round as I selected "+
-                            computerSelectionString);
-                    computerScore++;
-                } else if((computerSelectionNum==SCISSOR)&&(usrSelectionNum==PAPER)){
-                    JOptionPane.showMessageDialog(null, "I win this round as I selected "+
-                            computerSelectionString);
-                    computerScore++;
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "You have entered an impossible value therefore you lose");
+            int usrSelectionNum = Integer.parseInt(
+                    JOptionPane.showInputDialog("Enter 1 (for Rock), 2 (for Paper), or 3 (for Scissors)"));
+            if((usrSelectionNum!=1)&&(usrSelectionNum!=2)&&(usrSelectionNum!=3)){
+                JOptionPane.showMessageDialog(null,"You have entered an impossible value, therfore you lose");
+                computerScore++;
+            } else if(usrSelectionNum == computerSelectionNum){
+                JOptionPane.showMessageDialog(null, "The round was a draw as I selected " +
+                        computerSelectionString +" as well.");
+            } else if((usrSelectionNum == 1)&&(computerSelectionNum== 3)){
+                JOptionPane.showMessageDialog(null, "You win this round as I selected "+
+                        computerSelectionString);
+                userScore++;
+            } else if((usrSelectionNum==2)&&(computerSelectionNum==1)){
+                JOptionPane.showMessageDialog(null, "You win this round as I selected "+
+                        computerSelectionString);
+                userScore++;
+            } else if((usrSelectionNum==3)&&(computerSelectionNum==2)){
+                JOptionPane.showMessageDialog(null, "You win this round as I selected " +
+                        computerSelectionString);
+                userScore++;
+            } else if((computerSelectionNum==1)&&(usrSelectionNum==3)){
+                JOptionPane.showMessageDialog(null, "I win this round as I selected " +
+                        computerSelectionString);
+                computerScore++;
+            } else if((computerSelectionNum==2)&&(usrSelectionNum==1)){
+                JOptionPane.showMessageDialog(null, "I win this round as I selected "+
+                        computerSelectionString);
+                computerScore++;
+            } else if((computerSelectionNum==3)&&(usrSelectionNum==2)){
+                JOptionPane.showMessageDialog(null, "I win this round as I selected "+
+                        computerSelectionString);
                 computerScore++;
             }
-
-
         }
         JOptionPane.showMessageDialog(null, "The final score was Computer: "+computerScore
                 +" User: "+userScore);
