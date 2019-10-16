@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: HiLow
+Class-Path: ../out/production/IntroToProgramming/HiLow.class
+
