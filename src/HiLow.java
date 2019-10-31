@@ -48,7 +48,6 @@ public class HiLow {
 
     public static void main(String[] args) {
         int winCount = 0;
-        int tryCount = 0;
 
         int lastCard = cardSelection();
         try {
@@ -81,13 +80,12 @@ public class HiLow {
                 }
 
                 lastCard = newCard;
-                tryCount++;
 
-            } while ((winCount < WIN_NUM)&&(tryCount<MAX_TRIES));
+            } while (winCount!=0);
             if(winCount == WIN_NUM){
-                JOptionPane.showMessageDialog(null, "The card was a " + cards[lastCard] + "\nCongratulations you won. It took " + tryCount+ " tries.");
+                JOptionPane.showMessageDialog(null, "The card was a " + cards[lastCard] + "\nCongratulations you won.");
             } else {
-              JOptionPane.showMessageDialog(null, "The card was a "+ cards[lastCard] + "\nYou lost. You have used " + tryCount+ " tries.");
+              JOptionPane.showMessageDialog(null, "The card was a "+ cards[lastCard] + "\nYou lost.");
             }
         } catch (NullPointerException exception){
             JOptionPane.showMessageDialog(null, "You closed the window");
