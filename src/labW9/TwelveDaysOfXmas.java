@@ -1,5 +1,25 @@
 package labW9;
-
+/* SELF ASSESSMENT
+ 1. Did I use easy-to-understand meaningfu,l properly formatted, variable names and CONSTANTS?
+        Mark out of 10: 10
+        Comment:   All variables and constants are properly formatted and show what the variable represents.
+ 2. Did I implement the getVerse function correctly and in a manner that can be understood (5 marks for function definition, 5 marks for function call and 15 marks for function implementation)?
+       Mark out of 25: 25
+        Comment:  The getVerse is properly defined, called, and implemented as it generates the verse for each day correctly.
+ 3. Did I implement the getChristmasGift function correctly using a switch statement and in a manner that can be understood (5 marks for function definition, 5 marks for function call and 15 marks for function implementation)?
+       Mark out of 25: 25
+        Comment:  The function properly returns the christmas gift as a string to be used by getVerse
+ 4. Did I implement the getOrdinalString function correctly using if or conditional operators and in a manner that can be understood (5 marks for function definition, 5 marks for function call and 15 marks for function implementation)?
+       Mark out of 25: 25
+        Comment:  The function returns the day as a string to be used by getVerse
+ 5. Does the program produce the output correctly?
+       Mark out of 10: 10
+        Comment:  The program outputs the correct content, in this case the song 12 days of christmas
+ 6. How well did I complete this self-assessment?
+        Mark out of 5: 5
+        Comment: Assessment is completed thoroughly and correctly
+ Total Mark out of 100 (Add all the previous marks): 100
+*/
 public class TwelveDaysOfXmas {
     private static int MAX_DAYS = 12;
     public static void main(String[] args) {
