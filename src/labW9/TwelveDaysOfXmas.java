@@ -66,33 +66,32 @@ public class TwelveDaysOfXmas {
         }
     }
     static String getOrdinalString(int number){
-        switch(number){
-            case 1:
-                return "first";
-            case 2:
-                return "second";
-            case 3:
-                return "third";
-            case 4:
-                return "fourth";
-            case 5:
-                return "fifth";
-            case 6:
-                return "sixth";
-            case 7:
-                return "seventh";
-            case 8:
-                return "eighth";
-            case 9:
-                return "ninth";
-            case 10:
-                return "tenth";
-            case 11:
-                return "eleventh";
-            case 12:
-                return "twelfth";
-            default:
-                return "";
+        if(number == 1){
+            return "first";
+        } else if(number == 2){
+            return "second";
+        } else if(number == 3){
+            return "third";
+        } else if(number == 4){
+            return "fourth";
+        } else if(number == 5){
+            return "fifth";
+        } else if(number == 6){
+            return "sixth";
+        } else if(number == 7){
+            return "seventh";
+        } else if(number == 8){
+            return "eighth";
+        } else if(number == 9){
+            return "ninth";
+        } else if(number == 10){
+            return "tenth";
+        } else if(number == 11){
+            return "eleventh";
+        } else if(number == 12){
+            return "twelfth";
+        } else {
+            return null;
         }
     }
 }
