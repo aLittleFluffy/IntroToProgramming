@@ -112,7 +112,7 @@ public class SieveOfEratosthenes {
     public static int[] sieve(int var_N){
         int[] array = createSequence(var_N);
         for (int i = 0; i < array.length; i++) {
-            if(array[i]>0 && array[i]<Math.sqrt(var_N)){
+            if(array[i]>0 && array[i]<=Math.sqrt(var_N)){
                 array = crossOutHigherMultiples(array, array[i]);
                 sequenceToString(array);
             }
@@ -163,6 +163,7 @@ public class SieveOfEratosthenes {
             } else return getInt();
         } catch(Exception except) {
             System.out.println("Error in input parser, attempting again.");
+            JOptionPane.showMessageDialog(null, "An Error occured, hit ok to try again");
             return getInt();
         }
     }
